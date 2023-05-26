@@ -1,0 +1,56 @@
+.latest {
+    color: rgb(255, 255, 255,0.8);
+    font-family:'Special Elite';
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-style: oblique;
+    margin-bottom: 30px;
+  }
+
+  .index .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 15px;
+    justify-items: center; /* Ajouter cette ligne pour centrer les articles horizontalement */
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  
+
+.index .article {
+  color: rgba(255, 255, 255, 0.708);
+  margin: 10px;
+  width: 90%; /* Ajustez la largeur selon vos besoins */  
+  max-width:302px ;
+}
+
+.index .markdown {
+  display : none;
+}
+
+
+.index .title {
+  font-size: 25px;
+  font-family:'Crimson Text';
+  font-weight: 600;  
+  font-variant-caps: all-petite-caps;
+  margin-top: 10px;
+}
+
+.index .description {
+  font-size: 18px;
+  font-family: 'GFS Neohellenic', sans-serif;
+  font-variant-caps:unicase;
+  margin-top: 5px;
+}
+
+.index a:hover {
+  cursor : pointer;
+  color : rgba(175, 2, 2, 0.806);
+  transition: color 0.2s;
+}
+
+.article-image {
+  border-radius: 10px;
+}

@@ -1,0 +1,22 @@
+.info-text {
+    color: rgb(255, 255, 255,0.8);
+    font-size: 15px;
+    font-style: italic;
+}
+
+
+.info-bar img {
+    margin: 30px;
+    width: 40px;
+    height: auto;
+}
+
+.info-bar{
+    list-style: none; 
+    padding: 10px; 
+    display: flex; 
+    position: relative;
+    top:15px;
+}
+
+

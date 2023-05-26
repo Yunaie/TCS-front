@@ -1,0 +1,87 @@
+
+.comments {
+    margin-top: 65px;
+    max-width: 650px;
+    margin: 0 auto; /* Ajouter cette ligne pour centrer horizontalement */
+    text-align: center;
+    color: rgba(255, 255, 255, 0.708);
+  }
+  
+  .comment-user {
+    font-size: 20px;
+    font-family: 'Special Elite';
+    font-weight: 600;
+    margin-top: 50px;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    
+  }
+  
+  .comment-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .comment-content {
+    display: flex;
+    align-items:start;
+  }
+  
+  .comment-date {
+    font-size: 12px;
+    margin-bottom: 50px;
+  }
+  
+  .comment-text {
+    margin-top: 40px;
+  }
+
+  .comment-text:hover {
+    cursor : pointer;
+    color : rgba(175, 2, 2, 0.806);
+    transition: color 0.2s;
+  }
+
+  .comment-user:hover {
+    cursor : pointer;
+    color : rgba(175, 2, 2, 0.806);
+    transition: color 0.2s;
+  }
+  
+  
+ .tooltip {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: black;
+  border: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+  cursor: pointer;
+  transition-duration: .3s;
+  overflow: hidden;
+  position: relative;
+}
+
+.svgIcon {
+  width: 12px;
+  transition-duration: .3s;
+}
+
+.svgIcon path {
+  fill: white;
+}
+
+.tooltip:hover {
+  width: 50px;
+  border-radius: 50px;
+  transition-duration: .2s;
+  background-color : rgba(175, 2, 2, 0.806);
+  align-items: center;
+}
