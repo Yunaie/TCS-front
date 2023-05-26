@@ -36,6 +36,7 @@ function ArticlesPage({ setIsLoggedIn, setUserId, isAdmin }) {
       const updatedUsers = [...users];
       updatedUsers.splice(index, 1);
       setUsers(updatedUsers);
+      navigate(`/users`);
     } catch (error) {
       console.log(error);
     }
