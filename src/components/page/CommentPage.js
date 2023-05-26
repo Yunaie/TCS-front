@@ -6,7 +6,21 @@ import axios from 'axios';
 function CommentPage({id, isAdmin, setisAdmin}) {
     const [comments, setComments] = useState([]);
     const navigate = useNavigate();
+    const [User,setUser] = useState([])
 
+    useEffect(() => {
+      // Récupérer les détails de l'utilisateur depuis l'API en utilisant l'ID du commentaire
+      fetch(`https://true-crime-story-back.onrender.com/users/${comment.user}`)
+        .then((response) => response.json())
+        .then((data) => {
+          // Mettre à jour le state avec les détails de l'utilisateur récupéré
+          setUser(data);
+        })
+        .catch((error) => {
+          console.error("Error:", error);
+        });
+    }, [comment.user]);
+    
 
     useEffect(() => {
         const fetchCommentaires = async () => {
@@ -58,7 +72,7 @@ function CommentPage({id, isAdmin, setisAdmin}) {
             comments.map((comment) => (
               <div key={comment._id}>
                 <Link to={`http://localhost:3000/users/${comment.user}`}>
-                  <h2 className="comment-user">{comment.user}</h2>
+                  <h2 className="comment-user">{User.username}</h2>
                 </Link>
                 <div className="comment-content">
                   <p className="comment-date">
