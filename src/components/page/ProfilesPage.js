@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import '../../styles/ProfilePage.css';
+import { useNavigate, Link } from "react-router-dom";
 
 function ArticlesPage({ setIsLoggedIn, setUserId, isAdmin }) {
   const [users, setUsers] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // Récupérer tous les utilisateurs depuis l'API
@@ -36,7 +38,6 @@ function ArticlesPage({ setIsLoggedIn, setUserId, isAdmin }) {
       const updatedUsers = [...users];
       updatedUsers.splice(index, 1);
       setUsers(updatedUsers);
-      navigate(`/users`);
     } catch (error) {
       console.log(error);
     }
@@ -64,6 +65,7 @@ function ArticlesPage({ setIsLoggedIn, setUserId, isAdmin }) {
                     className="tooltip"
                     onClick={() => handleDeleteUser(user._id, index)}
                   >
+                    Supprimer
                   </button>
                 )}
               </div>
