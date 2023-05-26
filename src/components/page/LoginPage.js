@@ -4,7 +4,7 @@ import "../../styles/LoginPage.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-function LoginPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId }) {
+function LoginPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin, setisAdmin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
@@ -42,7 +42,6 @@ function LoginPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId }) {
           }
         );
         setUserId(response2.data._id);
-        console.log(response2)
       }
     } catch (error) {
       console.error("Error:", error);
