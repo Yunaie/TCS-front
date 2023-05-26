@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import axios from "axios";
 import '../../styles/ProfilePage.css';
-import { useNavigate, Link } from "react-router-dom";
 
 function ArticlesPage({ setIsLoggedIn, setUserId, isAdmin }) {
   const [users, setUsers] = useState([]);
