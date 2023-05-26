@@ -34,7 +34,7 @@ function LoginPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId }) {
         setRedirect(true); // Définir la redirection
         
         const response2 = await axios.get(
-          `https://true-crime-story-back.onrender.com//users/mail/${email}`,
+          `https://true-crime-story-back.onrender.com/users/mail/${email}`,
           {
           },
           {
