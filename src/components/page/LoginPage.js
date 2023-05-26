@@ -4,7 +4,7 @@ import "../../styles/LoginPage.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-function LoginPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin, setisAdmin }) {
+function LoginPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
@@ -34,7 +34,7 @@ function LoginPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin, setisAd
         setRedirect(true); // Définir la redirection
         
         const response2 = await axios.get(
-          `https://true-crime-story-back.onrender.com/users/mail/${email}`,
+          `https://true-crime-story-back.onrender.com//users/mail/${email}`,
           {
           },
           {
@@ -42,7 +42,6 @@ function LoginPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin, setisAd
           }
         );
         setUserId(response2.data._id);
-        setisAdmin(response2.data.Admin)
         console.log(response2)
       }
     } catch (error) {
