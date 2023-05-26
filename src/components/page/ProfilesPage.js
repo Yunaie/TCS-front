@@ -64,7 +64,6 @@ function ArticlesPage({ setIsLoggedIn, setUserId, isAdmin }) {
                     className="tooltip"
                     onClick={() => handleDeleteUser(user._id, index)}
                   >
-                    Supprimer
                   </button>
                 )}
               </div>
