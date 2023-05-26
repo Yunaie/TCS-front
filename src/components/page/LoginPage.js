@@ -42,8 +42,7 @@ function LoginPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin, setisAd
           }
         );
         setUserId(response2.data._id);
-        setisAdmin(response2.data.Admin)
-        console.log(response2)
+        setisAdmin(response2.data.Admin);
       }
     } catch (error) {
       console.error("Error:", error);
