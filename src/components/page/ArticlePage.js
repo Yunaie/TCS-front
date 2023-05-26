@@ -13,7 +13,7 @@ function ArticlePage({isLoggedIn, setIsLoggedIn, userId, setUserId,isAdmin,setis
     useEffect(() => {
         const fetchArticle = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/articles/${id}`);
+                const response = await axios.get(`https://true-crime-story-back.onrender.com/articles/${id}`);
                 setArticle(response.data);
             } catch (error) {
                 console.error('Error:', error);
@@ -41,7 +41,7 @@ function ArticlePage({isLoggedIn, setIsLoggedIn, userId, setUserId,isAdmin,setis
 
     const handleLike = async () => {
         try {
-            const response = await axios.put(`http://localhost:8000/users/like/${userId}`, {articleId: article._id});
+            const response = await axios.put(`https://true-crime-story-back.onrender.com/users/like/${userId}`, {articleId: article._id});
 
             if (response.status === 200) {
                 setArticleLiked(true);
@@ -137,7 +137,7 @@ function CommentPag({id, userId, isLoggedIn}) {
     useEffect(() => {
         const fetchCommentaires = async () => {
             try {
-                const response = await axios.post(`http://localhost:8000/commentaires/article`, {article: id});
+                const response = await axios.post(`https://true-crime-story-back.onrender.com/commentaires/article`, {article: id});
                 console.log(response.data);
 
                 if (response.data.errors) { // Handle errors appropriately
@@ -181,7 +181,7 @@ function CommentPag({id, userId, isLoggedIn}) {
     };
 
     useEffect(() => { // Récupérer les détails de l'utilisateur depuis l'API en utilisant l'ID
-        fetch(`http://localhost:8000/users/${userId}`).then((response) => response.json()).then((data) => { // Mettre à jour le state avec les détails de l'utilisateur récupéré
+        fetch(`https://true-crime-story-back.onrender.com/users/${userId}`).then((response) => response.json()).then((data) => { // Mettre à jour le state avec les détails de l'utilisateur récupéré
             setUsername(data.username);
         }).catch((error) => {
             console.error("Error:", error);
@@ -212,7 +212,7 @@ function CommentPag({id, userId, isLoggedIn}) {
 
     const handleDeleteComment = async (commentId, index) => {
         try { // Envoyer une requête de suppression du commentaire avec l'ID du commentaire
-            await axios.delete(`http://localhost:8000/commentaires/${commentId}`, {withCredentials: true});
+            await axios.delete(`https://true-crime-story-back.onrender.com/commentaires/${commentId}`, {withCredentials: true});
 
             // Mettre à jour la liste des commentaires en supprimant le commentaire supprimé
             const updatedComments = [...comments];

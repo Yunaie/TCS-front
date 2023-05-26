@@ -9,7 +9,7 @@ function ArticlesPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin,setis
 
   useEffect(() => {
     // Récupérer tous les articles depuis l'API
-    fetch('http://localhost:8000/articles/all')
+    fetch('https://true-crime-story-back.onrender.com/articles/all')
       .then(response => response.json())
       .then(data => {
         // Mettre à jour le state avec les articles récupérés

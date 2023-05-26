@@ -7,7 +7,7 @@ function IndexPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin,setisAdm
 
   useEffect(() => {
     // Récupérer les 4 derniers articles depuis l'API
-    fetch('http://localhost:8000/articles')
+    fetch('https://true-crime-story-back.onrender.com/articles')
       .then(response => response.json())
       .then(data => {
         // Mettre à jour le state avec les articles récupérés
