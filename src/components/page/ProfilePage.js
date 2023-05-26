@@ -32,7 +32,7 @@ function ProfilePage({ isLoggedIn, setIsLoggedIn, userId, setUserId,isAdmin,seti
   useEffect(() => {
     const fetchLikedArticles = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/users/like/${userId}`);
+        const response = await axios.get(`https://true-crime-story-back.onrender.com/users/like/${userId}`);
         setLikes(response.data);
       } catch (error) {
         console.log(error);
@@ -90,7 +90,7 @@ const handlePicture = async (ev) => {
   ev.preventDefault();
   try {
     const response = await axios.put(
-      `http://localhost:8000/users/picture/${userId}`,
+      `https://true-crime-story-back.onrender.com/users/picture/${userId}`,
       {
         picture: picture
       },

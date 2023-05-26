@@ -12,7 +12,7 @@ function RegisterPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin,setis
     ev.preventDefault();
     console.log("hello")
     try {
-      const response = await fetch("http://localhost:8000/users/register", {
+      const response = await fetch("https://true-crime-story-back.onrender.com/users/register", {
         method: "POST",
         body: JSON.stringify({ username, email, password }),
         headers: { "Content-Type": "application/json" },

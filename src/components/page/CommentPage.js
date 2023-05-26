@@ -11,7 +11,7 @@ function CommentPage({id, isAdmin, setisAdmin}) {
     useEffect(() => {
         const fetchCommentaires = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/commentaires`, {});
+                const response = await axios.get(`https://true-crime-story-back.onrender.com/commentaires`, {});
                 console.log(response.data);
 
                 if (response.data.errors) { // Handle errors appropriately

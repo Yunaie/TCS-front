@@ -26,7 +26,7 @@ function ArticlePage({isLoggedIn, setIsLoggedIn, userId, setUserId,isAdmin,setis
     useEffect(() => {
         const fetchLikedArticles = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/users/like/${userId}`);
+                const response = await axios.get(`https://true-crime-story-back.onrender.com/users/like/${userId}`);
                 if (response.status === 200) {
                     const likedArticles = response.data;
                     setArticleLiked(likedArticles.includes(id));
@@ -53,7 +53,7 @@ function ArticlePage({isLoggedIn, setIsLoggedIn, userId, setUserId,isAdmin,setis
 
     const handleUnlike = async () => {
         try {
-            const response = await axios.put(`http://localhost:8000/users/unlike/${userId}`, {articleId: article._id});
+            const response = await axios.put(`https://true-crime-story-back.onrender.com/users/unlike/${userId}`, {articleId: article._id});
 
             if (response.status === 200) {
                 setArticleLiked(false);
@@ -164,7 +164,7 @@ function CommentPag({id, userId, isLoggedIn}) {
 
     const fetchUserDetails = async (userIds) => {
         try {
-            const requests = userIds.map((userId) => axios.get(`http://localhost:8000/users/${userId}`));
+            const requests = userIds.map((userId) => axios.get(`https://true-crime-story-back.onrender.com/users/${userId}`));
             const responses = await Promise.all(requests);
 
             const users = responses.map((response) => {
@@ -191,7 +191,7 @@ function CommentPag({id, userId, isLoggedIn}) {
     const handleComment = async (ev) => {
         ev.preventDefault();
         try {
-            const response = await axios.post(`http://localhost:8000/commentaires`, {
+            const response = await axios.post(`https://true-crime-story-back.onrender.com/commentaires`, {
                 user: userId,
                 commentaire: comment,
                 article: id
