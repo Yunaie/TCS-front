@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "../../styles/CommentPage.css";
+import "../../styles/ArticlePage.css";
 import axios from 'axios';
 
 function CommentPage({ id, isAdmin, setisAdmin }) {
@@ -89,10 +89,8 @@ function CommentPage({ id, isAdmin, setisAdmin }) {
         comments.map((comment, index) => (
           <div key={comment._id}>
             <Link to={`https://true-crime-story.onrender.com/users/${comment.user}`}>
-              <div className="user-profile">
-                <img src={pics[comment.user]} alt="Profile" className="profile-picture" />
+                <img src={pics[comment.user]} alt="Profile" className="comment-pic" />
                 <h2 className="comment-user">{users[comment.user]}</h2>
-              </div>
             </Link>
             <div className="comment-content">
               <p className="comment-date">
