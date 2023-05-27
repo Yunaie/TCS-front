@@ -50,6 +50,8 @@ function LoginPage({ setIsLoggedIn, setUserId, setisAdmin }) {
       setErrorMessage("Informations incorrectes");
     }
   };
+  
+  console.log(isAdmin);
 
   if (redirect) {
     return <Navigate to="/" />;
