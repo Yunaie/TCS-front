@@ -11,6 +11,7 @@ function Layout({isLoggedIn, setIsLoggedIn, userId, setUserId,isAdmin,setisAdmin
     const handleLogout = async () => {
         try {
             setIsLoggedIn(false);
+            setisAdmin(false);
             setUserId(null);
             navigate('/login');
         } catch (error) {

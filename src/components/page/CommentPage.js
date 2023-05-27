@@ -7,6 +7,7 @@ function CommentPage({ id, isAdmin, setisAdmin }) {
   const [comments, setComments] = useState([]);
   const navigate = useNavigate();
   const [users, setUsers] = useState([]);
+  const [pics, setPics] = useState([]);
 
   useEffect(() => {
     const fetchUserData = async (userid) => {
@@ -20,6 +21,11 @@ function CommentPage({ id, isAdmin, setisAdmin }) {
             const updatedUsers = { ...prevUsers };
             updatedUsers[userid] = response.data.username;
             return updatedUsers;
+          });
+          setPics(prevPics => {
+            const updatedPics = { ...prevPics };
+            updatedPics[userid] = response.data.picture;
+            return updatedPics;
           });
         }
       } catch (error) {
@@ -83,7 +89,8 @@ function CommentPage({ id, isAdmin, setisAdmin }) {
         comments.map((comment, index) => (
           <div key={comment._id}>
             <Link to={`https://true-crime-story.onrender.com/users/${comment.user}`}>
-              <h2 className="comment-user">{users[comment.user]}</h2>
+                <img src={pics[comment.user]} alt="Profile" className="comment-pic" />
+                <h2 className="comment-user">{users[comment.user]}</h2>
             </Link>
             <div className="comment-content">
               <p className="comment-date">
