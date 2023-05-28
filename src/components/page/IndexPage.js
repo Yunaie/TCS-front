@@ -9,9 +9,7 @@ function IndexPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin,setisAdm
 
   useEffect(() => {
     // Récupérer les 4 derniers articles depuis l'API
-    fetch('https://true-crime-story-back.onrender.com
-
-/articles')
+    fetch('https://true-crime-story-back.onrender.com/articles')
       .then(response => response.json())
       .then(data => {
         // Mettre à jour le state avec les articles récupérés
@@ -26,9 +24,7 @@ function IndexPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin,setisAdm
   const handleDeleteArticle = async (articleid, index) => {
     try {
       // Envoyer une requête de suppression de l'utilisateur avec l'ID de l'utilisateur
-      await axios.delete(`https://true-crime-story-back.onrender.com
-
-/articles/${articleid}`, { withCredentials: true });
+      await axios.delete(`https://true-crime-story-back.onrender.com/articles/${articleid}`, { withCredentials: true });
 
       // Mettre à jour la liste des utilisateurs en supprimant l'utilisateur supprimé
       const updatedArticles = [...articles];
