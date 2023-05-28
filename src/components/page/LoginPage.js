@@ -15,9 +15,7 @@ function LoginPage({ setIsLoggedIn, setUserId, setisAdmin,isAdmin }) {
 
     try {
       const response = await axios.post(
-        `https://true-crime-story-back.onrender.com
-
-/users/login`,
+        `https://true-crime-story-back.onrender.com/users/login`,
         {
           email,
           password,
@@ -41,9 +39,7 @@ function LoginPage({ setIsLoggedIn, setUserId, setisAdmin,isAdmin }) {
         localStorage.setItem('Admin', response.data.Admin);
 
         const response2 = await axios.get(
-          `https://true-crime-story-back.onrender.com
-
-/users/mail/${email}`,
+          `https://true-crime-story-back.onrender.com/users/mail/${email}`,
           {
             withCredentials: true,
           }
