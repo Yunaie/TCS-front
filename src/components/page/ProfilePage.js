@@ -18,7 +18,9 @@ function ProfilePage({ isLoggedIn, setIsLoggedIn, userId, setUserId,isAdmin,seti
 
   useEffect(() => {
     // Récupérer les détails de l'utilisateur depuis l'API en utilisant l'ID
-    fetch(`https://true-crime-story-back.onrender.com/users/${id}`)
+    fetch(`https://true-crime-story-back.onrender.com
+
+/users/${id}`)
       .then((response) => response.json())
       .then((data) => {
         // Mettre à jour le state avec les détails de l'utilisateur récupéré
@@ -32,7 +34,9 @@ function ProfilePage({ isLoggedIn, setIsLoggedIn, userId, setUserId,isAdmin,seti
   useEffect(() => {
     const fetchLikedArticles = async () => {
       try {
-        const response = await axios.get(`https://true-crime-story-back.onrender.com/users/like/${userId}`);
+        const response = await axios.get(`https://true-crime-story-back.onrender.com
+
+/users/like/${userId}`);
         setLikes(response.data);
       } catch (error) {
         console.log(error);
@@ -67,7 +71,9 @@ const handleBio = async (ev) => {
   ev.preventDefault();
   try {
     const response = await axios.put(
-      `https://true-crime-story-back.onrender.com/users/bio/${userId}`,
+      `https://true-crime-story-back.onrender.com
+
+/users/bio/${userId}`,
       {
         bio: bio
       },
@@ -90,7 +96,9 @@ const handlePicture = async (ev) => {
   ev.preventDefault();
   try {
     const response = await axios.put(
-      `https://true-crime-story-back.onrender.com/users/picture/${userId}`,
+      `https://true-crime-story-back.onrender.com
+
+/users/picture/${userId}`,
       {
         picture: picture
       },
@@ -181,7 +189,9 @@ function ArticleCard({ id }) {
 
   useEffect(() => {
     // Récupérer les détails de l'article depuis l'API en utilisant l'ID
-    fetch(`https://true-crime-story-back.onrender.com/articles/${id}`)
+    fetch(`https://true-crime-story-back.onrender.com
+
+/articles/${id}`)
       .then((response) => response.json())
       .then((data) => {
         // Mettre à jour le state avec les détails de l'article récupéré

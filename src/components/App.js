@@ -12,10 +12,11 @@ import IndexPage from './page/IndexPage';
 import Layout from './Layout';
 import CommentPage from './page/CommentPage';
 
+
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [isAdmin,setisAdmin] = useState(false);
-  const [userId, setUserId] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState( (localStorage.getItem("jwtToken") != null ) )
+  const [isAdmin,setisAdmin] = useState((localStorage.getItem("Admin") != null ) );
+  const [userId, setUserId] = useState((localStorage.getItem("_id") != null ));
 
   return (
     <Router>
