@@ -9,9 +9,7 @@ function IndexPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin,setisAdm
 
   useEffect(() => {
     // Récupérer les 4 derniers articles depuis l'API
-    fetch('https://true-crime-story-back.onrender.com
-
-/articles')
+    fetch('https://true-crime-story-back.onrender.com/articles')
       .then(response => response.json())
       .then(data => {
         // Mettre à jour le state avec les articles récupérés
@@ -26,9 +24,7 @@ function IndexPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin,setisAdm
   const handleDeleteArticle = async (articleid, index) => {
     try {
       // Envoyer une requête de suppression de l'utilisateur avec l'ID de l'utilisateur
-      await axios.delete(`https://true-crime-story-back.onrender.com
-
-/articles/${articleid}`, { withCredentials: true });
+      await axios.delete(`https://true-crime-story-back.onrender.com/articles/${articleid}`, { withCredentials: true });
 
       // Mettre à jour la liste des utilisateurs en supprimant l'utilisateur supprimé
       const updatedArticles = [...articles];
@@ -62,14 +58,15 @@ function IndexPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin,setisAdm
             </Link>
             <p className="date">Published on: {formatDate(article.createdAt)}</p>
             <p className="description">{article.description}</p>
-            <button
+            {isAdmin && (<button
                     className="tooltip"
                     onClick={() => handleDeleteArticle(article._id, index)}
                   >
                     <svg viewBox="0 0 448 512" className="svgIcon">
                   <path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"></path>
                 </svg>
-                  </button>
+                eedvsik
+                  </button>)}
           </div>
         ))}
       </div>

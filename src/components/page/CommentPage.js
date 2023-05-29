@@ -12,9 +12,7 @@ function CommentPage({ id, isAdmin, setisAdmin }) {
   useEffect(() => {
     const fetchUserData = async (userid) => {
       try {
-        const response = await axios.get(`https://true-crime-story-back.onrender.com
-
-/users/${userid}`);
+        const response = await axios.get(`https://true-crime-story-back.onrender.com/users/${userid}`);
         console.log(response.data);
 
         if (response.data.errors) {
@@ -44,9 +42,7 @@ function CommentPage({ id, isAdmin, setisAdmin }) {
   useEffect(() => {
     const fetchCommentaires = async () => {
       try {
-        const response = await axios.get(`https://true-crime-story-back.onrender.com
-
-/commentaires`);
+        const response = await axios.get(`https://true-crime-story-back.onrender.com/commentaires`);
         console.log(response.data);
 
         if (response.data.errors) {
@@ -65,9 +61,7 @@ function CommentPage({ id, isAdmin, setisAdmin }) {
   const handleDeleteComment = async (commentId, index) => {
     try {
       // Envoyer une requête de suppression du commentaire avec l'ID du commentaire
-      await axios.delete(`https://true-crime-story-back.onrender.com
-
-/commentaires/${commentId}`, { withCredentials: true });
+      await axios.delete(`https://true-crime-story-back.onrender.com/commentaires/${commentId}`, { withCredentials: true });
 
       // Mettre à jour la liste des commentaires en supprimant le commentaire supprimé
       const updatedComments = [...comments];

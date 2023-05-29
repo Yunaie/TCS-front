@@ -11,12 +11,19 @@ import '../styles/Reset.css';
 import IndexPage from './page/IndexPage';
 import Layout from './Layout';
 import CommentPage from './page/CommentPage';
+import PosterPage from './page/PosterPage';
+import PosterArticlePage from './page/PosterArticlePage';
+import PosterCrimePage from './page/PosterCrimePage';
+import PosterVictimePage from './page/PosterVictimePage';
+import PosterCriminelPage from './page/PosterCriminelPage';
+
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState( (localStorage.getItem("jwtToken") != null ) )
-  const [isAdmin,setisAdmin] = useState((localStorage.getItem("Admin") != null ) );
-  const [userId, setUserId] = useState((localStorage.getItem("_id") != null ));
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isAdmin,setisAdmin] = useState();
+  const [userId, setUserId] = useState(); 
 
   return (
     <Router>
@@ -74,6 +81,46 @@ function App() {
                isAdmin = {isAdmin}
                setisAdmin = {setisAdmin}
               />} />
+              <Route path="/poster" element={<PosterPage  
+           isLoggedIn={isLoggedIn}
+           setIsLoggedIn={setIsLoggedIn}
+           userId={userId}
+           setUserId={setUserId}
+           isAdmin = {isAdmin}
+           setisAdmin = {setisAdmin}
+               />} />
+               <Route path="/poster/article" element={<PosterArticlePage  
+           isLoggedIn={isLoggedIn}
+           setIsLoggedIn={setIsLoggedIn}
+           userId={userId}
+           setUserId={setUserId}
+           isAdmin = {isAdmin}
+           setisAdmin = {setisAdmin}
+               />} />
+               <Route path="/poster/crime" element={<PosterCrimePage  
+           isLoggedIn={isLoggedIn}
+           setIsLoggedIn={setIsLoggedIn}
+           userId={userId}
+           setUserId={setUserId}
+           isAdmin = {isAdmin}
+           setisAdmin = {setisAdmin}
+               />} />
+               <Route path="/poster/victime" element={<PosterVictimePage  
+           isLoggedIn={isLoggedIn}
+           setIsLoggedIn={setIsLoggedIn}
+           userId={userId}
+           setUserId={setUserId}
+           isAdmin = {isAdmin}
+           setisAdmin = {setisAdmin}
+               />} />
+               <Route path="/poster/criminel" element={<PosterCriminelPage  
+           isLoggedIn={isLoggedIn}
+           setIsLoggedIn={setIsLoggedIn}
+           userId={userId}
+           setUserId={setUserId}
+           isAdmin = {isAdmin}
+           setisAdmin = {setisAdmin}
+               />} />
           <Route path="/infos" element={<InfoPage  
            isLoggedIn={isLoggedIn}
            setIsLoggedIn={setIsLoggedIn}

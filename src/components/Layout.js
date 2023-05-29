@@ -10,9 +10,7 @@ function Layout({ isLoggedIn, setIsLoggedIn, userId, setUserId, isAdmin, setisAd
 
   const handleLogout = async () => {
     try {
-      localStorage.removeItem('_id');
-      localStorage.removeItem('Admin');
-      localStorage.removeItem('jwtToken');
+      setIsLoggedIn(false);
       window.location.reload();
       navigate('/login');
     } catch (error) {
@@ -49,7 +47,7 @@ function Layout({ isLoggedIn, setIsLoggedIn, userId, setUserId, isAdmin, setisAd
                 </li>
               </>
             )}
-            {!isLoggedIn && (
+            {!isLoggedIn && !isAdmin && (
               <>
                 <li>
                   <Link to="/">Accueil</Link>
@@ -86,6 +84,9 @@ function Layout({ isLoggedIn, setIsLoggedIn, userId, setUserId, isAdmin, setisAd
                 </li>
                 <li>
                   <Link to="/comments">Comments</Link>
+                </li>
+                <li>
+                  <Link to="/poster">Poster</Link>
                 </li>
                 <li>
                   <button onClick={handleLogout}>Déconnexion</button>
