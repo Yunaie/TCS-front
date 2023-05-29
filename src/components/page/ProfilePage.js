@@ -32,7 +32,8 @@ function ProfilePage({ isLoggedIn, setIsLoggedIn, userId, setUserId,isAdmin,seti
   useEffect(() => {
     const fetchLikedArticles = async () => {
       try {
-        const response = await axios.get(`https://true-crime-story-back.onrender.com/users/like/${userId}`);
+
+        const response = await axios.get(`https://true-crime-story-back.onrender.com/users/like/${id}`);
         setLikes(response.data);
       } catch (error) {
         console.log(error);
@@ -40,7 +41,7 @@ function ProfilePage({ isLoggedIn, setIsLoggedIn, userId, setUserId,isAdmin,seti
     };
 
     fetchLikedArticles();
-  }, [userId]);
+  }, [id]);
 
   useEffect(() => {
     setAmIOwner(userId === id);
@@ -181,9 +182,7 @@ function ArticleCard({ id }) {
 
   useEffect(() => {
     // Récupérer les détails de l'article depuis l'API en utilisant l'ID
-    fetch(`https://true-crime-story-back.onrender.com
-
-/articles/${id}`)
+    fetch(`https://true-crime-story-back.onrender.com/articles/${id}`)
       .then((response) => response.json())
       .then((data) => {
         // Mettre à jour le state avec les détails de l'article récupéré
