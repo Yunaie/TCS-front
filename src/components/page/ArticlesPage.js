@@ -65,7 +65,7 @@ function ArticlesPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin,setis
             </Link>
             <p className="date">Published on: {formatDate(article.createdAt)}</p>
             <p className="description">{article.description}</p>
-            {isAdmin && (<button
+            { isAdmin && IsLoggedIn && (  <button
                     className="tooltip"
                     onClick={() => handleDeleteArticle(article._id, index)}
                   >
