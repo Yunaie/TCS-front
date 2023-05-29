@@ -58,7 +58,7 @@ function IndexPage({ IsLoggedIn,setIsLoggedIn,userId, setUserId,isAdmin,setisAdm
             </Link>
             <p className="date">Published on: {formatDate(article.createdAt)}</p>
             <p className="description">{article.description}</p>
-           { isAdmin && isLoggedIn && (  <button
+           { isAdmin && IsLoggedIn && (  <button
                     className="tooltip"
                     onClick={() => handleDeleteArticle(article._id, index)}
                   >
