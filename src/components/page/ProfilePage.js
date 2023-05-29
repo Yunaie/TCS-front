@@ -32,6 +32,7 @@ function ProfilePage({ isLoggedIn, setIsLoggedIn, userId, setUserId,isAdmin,seti
   useEffect(() => {
     const fetchLikedArticles = async () => {
       try {
+
         const response = await axios.get(`https://true-crime-story-back.onrender.com/users/like/${id}`);
         setLikes(response.data);
       } catch (error) {
@@ -40,7 +41,7 @@ function ProfilePage({ isLoggedIn, setIsLoggedIn, userId, setUserId,isAdmin,seti
     };
 
     fetchLikedArticles();
-  }, [userId]);
+  }, [id]);
 
   useEffect(() => {
     setAmIOwner(userId === id);
