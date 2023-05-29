@@ -4,7 +4,7 @@ import "../../styles/LoginPage.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-function LoginPage({ setIsLoggedIn, setUserId, setisAdmin,isAdmin }) {
+function LoginPage({ isLoggedIn,setIsLoggedIn, setUserId, setisAdmin,isAdmin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [redirect, setRedirect] = useState(false);
@@ -25,18 +25,14 @@ function LoginPage({ setIsLoggedIn, setUserId, setisAdmin,isAdmin }) {
         }
       );
 
-      console.log(response);
 
       if (response.data.errors) {
         setErrorMessage("Erreur lors de la connexion");
       } else {
-        const token = response.data.token;
-        setIsLoggedIn(true); // Mettre à jour l'état global de connexion
+        setIsLoggedIn(true);
         setRedirect(true); // Définir la redirection
         // Enregistrer le token dans localStorage ou sessionStorage
-        localStorage.setItem("jwtToken", token); // Vous pouvez également utiliser sessionStorage
-        localStorage.setItem('_id', response.data._id);
-        localStorage.setItem('Admin', response.data.Admin);
+        
 
         const response2 = await axios.get(
           `https://true-crime-story-back.onrender.com/users/mail/${email}`,
@@ -45,7 +41,6 @@ function LoginPage({ setIsLoggedIn, setUserId, setisAdmin,isAdmin }) {
           }
         );
         setUserId(response2.data._id);
-        console.log(response2.data.Admin);
         setisAdmin(response2.data.Admin);
       }
     } catch (error) {
