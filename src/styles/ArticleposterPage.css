@@ -18,7 +18,10 @@ form{
     font-size: 20px;
     margin-top: 10px;
     text-align: center;
-    overflow: scroll;
+/*     overflow: scroll; */
+      resize: vertical; /* Permet à l'utilisateur de redimensionner verticalement le textarea */
+      overflow: auto; /* Ajoute une barre de défilement lorsque le contenu dépasse la taille du textarea */
+      min-height: 100px; 
   }
   
   
