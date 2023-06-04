@@ -33,7 +33,7 @@ function LoginPage({ isLoggedIn,setIsLoggedIn, setUserId, setisAdmin,isAdmin }) 
         setErrorMessage("Erreur lors de la connexion");
       } else {
 
-        localStorage.setItem("jwtToken", token); // Vous pouvez également utiliser sessionStorage
+        localStorage.setItem("jwtToken", response.data.token); // Vous pouvez également utiliser sessionStorage
         localStorage.setItem('_id', response.data._id);
         localStorage.setItem('Admin', response.data.Admin);
         setIsLoggedIn(true);
