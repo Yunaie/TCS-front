@@ -32,13 +32,11 @@ function LoginPage({ isLoggedIn,setIsLoggedIn, setUserId, setisAdmin,isAdmin }) 
       if (response.data.errors) {
         setErrorMessage("Erreur lors de la connexion");
       } else {
-<<<<<<< HEAD
+
         localStorage.setItem("jwtToken", token); // Vous pouvez également utiliser sessionStorage
         localStorage.setItem('_id', response.data._id);
         localStorage.setItem('Admin', response.data.Admin);
-=======
         setIsLoggedIn(true);
->>>>>>> 260581db07b4ff06b38e45b27973072dbca53113
         setRedirect(true); // Définir la redirection
         // Enregistrer le token dans localStorage ou sessionStorage
         
