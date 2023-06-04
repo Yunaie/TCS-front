@@ -53,7 +53,7 @@ function PosterCrimePage() {
   }
 
   return (
-    <div>
+    <div className="all">
       {fait ?  (
         <div>
           <p className="latest">Voici l'id du crime créé : {ID}</p>
