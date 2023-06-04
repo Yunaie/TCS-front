@@ -61,7 +61,7 @@ function PosterCrimePage() {
           </button>
         </div>
       ) : (
-        <form onSubmit={crime}>
+        <form onSubmit={crime}className="all">
           <h1 className="article-titre">pays</h1>
           <input
             type="text"
