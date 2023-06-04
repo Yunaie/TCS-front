@@ -10,8 +10,9 @@ function Layout({ isLoggedIn, setIsLoggedIn, userId, setUserId, isAdmin, setisAd
 
   const handleLogout = async () => {
     try {
-      setIsLoggedIn(false);
-      setisAdmin(false);
+      localStorage.removeItem('jwtToken');
+      localStorage.removeItem('_id');
+      localStorage.removeItem('Admin');
       window.location.reload();
       navigate('/login');
     } catch (error) {
