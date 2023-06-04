@@ -1,0 +1,90 @@
+form{
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .all {
+    margin : 0 auto;
+  }
+   
+  .crime-form input {
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+    padding: 5px 7px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.436);
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: center;
+/*     overflow: scroll; */
+      resize: vertical; /* Permet à l'utilisateur de redimensionner verticalement le textarea */
+      overflow: auto; /* Ajoute une barre de défilement lorsque le contenu dépasse la taille du textarea */
+      min-height: 100px; 
+  }
+  
+  
+  .my-button {
+      background-color:rgba(79, 7, 7, 0.806);;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: baseline;
+      margin: 0 auto;
+      justify-content: center;
+      width: 200px;
+      margin-top: 25px;
+  
+  }
+  
+  .my-button:after {
+    content: "";
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  
+  .my-button:hover:after {
+    animation: ripple_401 1s ease-out;
+  }
+  
+  @keyframes ripple_401 {
+    0% {
+      width: 5px;
+      height: 5px;
+      opacity: 1;
+    }
+  
+    100% {
+      width: 200px;
+      height: 200px;
+      opacity: 0;
+    }
+  }
+  
+  .latest {
+    color: rgb(255, 255, 255,0.8);
+    font-family:'Special Elite';
+    font-size: 25px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-style: oblique;
+    margin-bottom: 30px;
+  }
+  
