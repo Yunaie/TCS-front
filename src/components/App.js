@@ -21,9 +21,9 @@ import PosterCriminelPage from './page/PosterCriminelPage';
 
 function App() {
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [isAdmin,setisAdmin] = useState();
-  const [userId, setUserId] = useState(); 
+  const [isLoggedIn, setIsLoggedIn] = useState( (localStorage.getItem("jwtToken") != null ) )
+  const [isAdmin,setisAdmin] = useState((localStorage.getItem("Admin") != null ) );
+  const [userId, setUserId] = useState((localStorage.getItem("_id") != null ));
 
   return (
     <Router>

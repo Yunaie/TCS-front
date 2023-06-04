@@ -10,6 +10,9 @@ function LoginPage({ isLoggedIn,setIsLoggedIn, setUserId, setisAdmin,isAdmin }) 
   const [redirect, setRedirect] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  
+
+
   const login = async (ev) => {
     ev.preventDefault();
 
@@ -29,7 +32,9 @@ function LoginPage({ isLoggedIn,setIsLoggedIn, setUserId, setisAdmin,isAdmin }) 
       if (response.data.errors) {
         setErrorMessage("Erreur lors de la connexion");
       } else {
-        setIsLoggedIn(true);
+        localStorage.setItem("jwtToken", token); // Vous pouvez également utiliser sessionStorage
+        localStorage.setItem('_id', response.data._id);
+        localStorage.setItem('Admin', response.data.Admin);
         setRedirect(true); // Définir la redirection
         // Enregistrer le token dans localStorage ou sessionStorage
         
