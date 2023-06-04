@@ -61,7 +61,7 @@ function LoginPage({ isLoggedIn,setIsLoggedIn, setUserId, setisAdmin,isAdmin }) 
   }
 
   return (
-          <form onSubmit={login}>
+          <form onSubmit={login} className="all">
             <h1 className="login-title">Login</h1>
             <input
               type="email"
