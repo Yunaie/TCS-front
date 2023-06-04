@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles/ArticlePosterPage.css";
+import "../../styles/ArticleposterPage.css";
 import axios from "axios";
 
 function PosterVictimePage() {
