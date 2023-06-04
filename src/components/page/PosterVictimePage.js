@@ -55,7 +55,7 @@ function PosterVictimePage() {
           </button>
         </div>
       ) : (
-        <form onSubmit={victime} className="all">
+        <form onSubmit={victime}>
           <h1 className="article-titre"></h1>
           <input
             type="text"
