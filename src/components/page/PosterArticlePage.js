@@ -44,7 +44,7 @@ function PosterArticlePage({ setIsLoggedIn, setUserId, setisAdmin,isAdmin }) {
 
 
   return (
-          <form onSubmit={article}>
+          <form onSubmit={article} className="all">
             <h1 className="article-titre">titre</h1>
             <input
               type="text"
