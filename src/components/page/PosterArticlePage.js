@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../../styles/LoginPage.css";
+import "../../styles/ArticleposterPage.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -44,7 +44,7 @@ function PosterArticlePage({ setIsLoggedIn, setUserId, setisAdmin,isAdmin }) {
 
 
   return (
-          <form onSubmit={article} className = "crime-form">
+          <form onSubmit={article}>
             <h1 className="article-titre">titre</h1>
             <input
               type="text"
